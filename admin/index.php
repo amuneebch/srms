@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true){
+    header("location:../login.php");
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,16 +20,16 @@
     
  
 
-    <?php include('include/header.html'); ?>
+    <?php include('include/header.php'); ?>
 
   
     <div class="app-layout">
 
-        <?php include('include/sidebar.html'); ?>
+        <?php include('include/sidebar.php'); ?>
 
         <div class="main-content">
-            <?php include('include/dashboard.html'); ?>
-            <?php include('include/footer.html'); ?>
+            <?php include('include/dashboard.php'); ?>
+            <?php include('include/footer.php'); ?>
         </div>
 
     </div>

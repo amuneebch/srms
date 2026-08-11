@@ -9,7 +9,9 @@ a{
     justify-content: center;
     text-align: center;
 }
-
+.btn{
+    margin-left: 25vw;
+}
 
 
 
@@ -156,7 +158,7 @@ aside a:hover {
 
 
 form {
-    max-width: 500px;
+    max-width: 400px;
     margin: 20px auto;
     padding: 30px 25px;
     background: #f9f9f9;
@@ -246,7 +248,102 @@ form input[type="submit"]:hover {
 
 
 
+/* Container & Layout */
+.table-container { 
+  max-width: 1200px;
+  width: 90%;
+  margin: 50px auto; /* Centers the entire component */
+  text-align: left; 
+  font-family: sans-serif;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  overflow: hidden;
+} 
 
+/* Header Block */
+.table-header { 
+  background-color: #212529; 
+  color: white; 
+  padding: 1.5rem;
+} 
+.table-header h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+}
+.table-header p {
+  margin: 0;
+  color: #adb5bd;
+}
+
+/* Responsive Table Wrapper */
+.responsive-wrapper { 
+  width: 100%;
+  overflow-x: auto; /* Enables horizontal scroll on small mobile screens */
+} 
+
+.responsive-wrapper table {
+  width: 100%;
+  border-collapse: collapse;
+  color: #212529; 
+}
+
+/* Table Cells */
+.responsive-wrapper th, 
+.responsive-wrapper td { 
+  padding: 1rem; 
+  border-bottom: 1px solid #dee2e6; 
+  text-align: left; 
+} 
+
+.responsive-wrapper thead { 
+  background-color: #f8f9fa; 
+  color: #495057; 
+} 
+
+.responsive-wrapper tbody tr:nth-of-type(odd) { 
+  background-color: rgba(0, 0, 0, 0.02); 
+} 
+
+.responsive-wrapper tbody tr:hover { 
+  background-color: rgba(0, 0, 0, 0.05); 
+} 
+
+/* User Info Layout (Avatar + Text Alignment) */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: #ced4da; 
+}
+
+/* Badges & Buttons */
+.badge {
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  background-color: #e9ecef;
+  color: #495057;
+}
+
+.btn-action {
+  padding: 0.35rem 0.75rem;
+  background-color: rgb(32, 120, 178);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-action:hover {
+  background-color: rgb(24, 90, 135);
+}
 
 
 

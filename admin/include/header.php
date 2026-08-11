@@ -1,3 +1,5 @@
+
+
 <nav>
     <div class="nav-brand">
         <h3>Student Management System</h3>
@@ -6,7 +8,7 @@
     <ul class="nav-links">   <!-- ← this class is needed -->
         <li><a href="../admin/index.php">Dashboard</a></li>
         <li><a href="#">Profile</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="../logout.php">Logout</a></li>
     </ul>
 </nav>
 

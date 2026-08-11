@@ -1,3 +1,5 @@
+
+
 <?php
 session_start();
 if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true){
@@ -5,9 +7,7 @@ if(!isset($_SESSION['admin_logged_in']) || $_SESSION['admin_logged_in'] !== true
     exit();
 }
 
-?>
 
-<?php
 
 if ($_SERVER['REQUEST_METHOD']=='POST'){
 
@@ -18,19 +18,19 @@ $name=$_POST['name'];
 $email=$_POST['email'];
 $id=$_POST['id'];
 $password=$_POST['password'];
-$semester=$_POST['semester'];
+$phone=$_POST['phone'];
 $image = $_FILES['image']['name'] ?? null;
 $Error="";
 
-if(email_exist($conn,$email)){
+if(email_exist_ins($conn,$email)){
 
-    if(id_exist($conn,$id)){
-            $qry="INSERT INTO student(name,email,stu_id,password,semester,img) VALUES('$name','$email','$id','$password','$semester','$image'); ";
-            if(insert_db($conn,$qry)){
-                echo "User Inserted Successfully !";
+    if(id_exist_ins($conn,$id)){
+            $qry="INSERT INTO instructor(name,email,ins_id,password,phone,img) VALUES('$name','$email','$id','$password','$phone','$image'); ";
+            if(insert_db_ins($conn,$qry)){
+                echo "Instructor Inserted Successfully !";
             }else{
                 $Error.= "SQL Error: " . mysqli_error($conn) . "<br>";
-                $Error.= "Error in Inserting Student in DB <br>";
+                $Error.= "Error in Inserting instructor in DB <br>";
                 perr($Error);
             }
 
@@ -58,30 +58,21 @@ if(email_exist($conn,$email)){
 
 <form method="post" enctype="multipart/form-data">
 
-    <label for="email">Name :</label><br>
+    <label for="email">Instructor Name :</label><br>
     <input type="text" placeholder="John doe" minlength="3" name="name">
     <br><br>
-     <label for="email">Email :</label><br>
+     <label for="email"> Instructor Email :</label><br>
     <input type="email" placeholder="abc@nsu.edu.pk" minlength="3" name="email">
     <br><br>
-     <label for="id">Student ID :</label><br>
-    <input type="text" placeholder="NSU-1234" pattern="NSU-[0-9]{4}" name="id">
+     <label for="id">Instructor ID :</label><br>
+    <input type="text" placeholder="NSU-I-1234" pattern="NSU-I-[0-9]{4}" name="id">
     <br><br>
      <label for="password">password :</label><br>
     <input type="password" placeholder="******" minlength="6" name="password">
     <br><br>
      
-     <label for="semester">Semester :</label><br>
-    <select name="semester">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4</option>
-        <option>5</option>
-        <option>6</option>
-        <option>7</option>
-        <option>8</option>
-    </select>
+     <label for="phone">phone :</label><br>
+    <input type="text" placeholder="0300*******" pattren="03[0-9]{9}" name="phone">
     <br><br>
 
      <label for="image">image :</label><br>

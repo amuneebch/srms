@@ -1,13 +1,13 @@
 
 
-
 <div class="Sidebar-Toggler" id="sidebarToggle">☰</div>
 
 <!-- Sidebar -->
 <aside id="sidebar">
     <br><br>
     <a href="../admin/index.php">Dashboard</a>
-    <a href="add_student.php">Add Students</a>
+    <a href="student.php">Students</a>
+    <a href="instructor.php">Instructor</a>
     <a href="#">Courses</a>
     <a href="#">Settings</a>
 </aside>
